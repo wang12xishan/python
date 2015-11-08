@@ -1,0 +1,619 @@
+
+ot@localhost ~]# easy_install pip 
+Traceback (most recent call last):
+  File "/bin/easy_install", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3095, in <module>
+    @_call_aside
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3081, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3108, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 660, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 673, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 846, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'setuptools==18.5' distribution was not found and is required by the application
+[root@localhost ~]# cd /usr/local/lib
+[root@localhost lib]# ls
+libntfs-3g.a   libntfs-3g.so   libpython3.4m.a  python2.7
+libntfs-3g.la  libpython2.7.a  pkgconfig
+[root@localhost lib]# ll
+总用量 35920
+[root@localhost python2.7]# pip install distribute
+Collecting distribute
+  Downloading distribute-0.7.3.zip (145kB)
+    100% |████████████████████████████████| 147kB 201kB/s 
+Requirement already satisfied (use --upgrade to upgrade): setuptools>=0.7 in ./site-packages (from distribute)
+Installing collected packages: distribute
+  Running setup.py install for distribute
+Successfully installed distribute-0.7.3
+[root@localhost python2.7]# pip install ipython
+Collecting ipython
+  Using cached ipython-4.0.0-py2-none-any.whl
+Collecting decorator (from ipython)
+  Using cached decorator-4.0.4-py2.py3-none-any.whl
+Collecting simplegeneric>0.8 (from ipython)
+  Using cached simplegeneric-0.8.1.zip
+    Complete output from command python setup.py egg_info:
+    /usr/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'test_suite'
+      warnings.warn(msg)
+    usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+       or: -c --help [cmd1 cmd2 ...]
+       or: -c --help-commands
+       or: -c cmd --help
+    
+    error: invalid command 'egg_info'
+    
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-cI14kr/simplegeneric
+[root@localhost python2.7]# easy_install Scrapy
+Traceback (most recent call last):
+  File "/bin/easy_install", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3095, in <module>
+    @_call_aside
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3081, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 3108, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 660, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 673, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py", line 846, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'setuptools==18.5' distribution was not found and is required by the application
+[root@localhost python2.7]# sudo apt-get install python-setuptools
+sudo：apt-get：找不到命令
+[root@localhost python2.7]# yum -y install python-setuptools
+There was a problem importing one of the Python modules
+required to run yum. The error leading to this problem was:
+
+   No module named yum
+
+Please install a package which provides this module, or
+verify that the module is installed correctly.
+
+It's possible that the above module doesn't match the
+current version of Python, which is:
+2.7.10 (default, Nov  8 2015, 00:33:46) 
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)]
+
+If you cannot solve this problem yourself, please go to 
+the yum faq at:
+  http://yum.baseurl.org/wiki/Faq
+  
+
+[root@localhost python2.7]# 
+[root@localhost python2.7]# yum -V
+There was a problem importing one of the Python modules
+required to run yum. The error leading to this problem was:
+
+   No module named yum
+
+Please install a package which provides this module, or
+verify that the module is installed correctly.
+
+It's possible that the above module doesn't match the
+current version of Python, which is:
+2.7.10 (default, Nov  8 2015, 00:33:46) 
+[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)]
+
+If you cannot solve this problem yourself, please go to 
+the yum faq at:
+  http://yum.baseurl.org/wiki/Faq
+  
+
+[root@localhost python2.7]# vim /etc/bin/yum
+[root@localhost python2.7]# vim /usr/bin/yum
+[root@localhost python2.7]# yum -y install python-setuptools
+已加载插件：fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirrors.opencas.cn
+ * epel: mirrors.opencas.cn
+ * extras: centos.ustc.edu.cn
+ * nux-dextop: li.nux.ro
+ * updates: centos.ustc.edu.cn
+软件包 python-setuptools-0.9.8-3.el7.noarch 已安装并且是最新版本
+无须任何处理
+[root@localhost python2.7]# python ez_setup.py install
+python: can't open file 'ez_setup.py': [Errno 2] No such file or directory
+[root@localhost 下载]# tar -zxvf distribute-0.6.49.tar.gz 
+distribute-0.6.49/
+distribute-0.6.49/CHANGES (links).txt
+distribute-0.6.49/CHANGES.txt
+distribute-0.6.49/CONTRIBUTORS.txt
+distribute-0.6.49/DEVGUIDE.txt
+distribute-0.6.49/distribute.egg-info/
+distribute-0.6.49/distribute.egg-info/dependency_links.txt
+distribute-0.6.49/distribute.egg-info/entry_points.txt
+distribute-0.6.49/distribute.egg-info/PKG-INFO
+distribute-0.6.49/distribute.egg-info/SOURCES.txt
+distribute-0.6.49/distribute.egg-info/top_level.txt
+distribute-0.6.49/distribute.egg-info/zip-safe
+distribute-0.6.49/distribute_setup.py
+distribute-0.6.49/docs/
+distribute-0.6.49/docs/build/
+distribute-0.6.49/docs/build/html/
+distribute-0.6.49/docs/build/html/_sources/
+distribute-0.6.49/docs/build/html/_sources/easy_install.txt
+distribute-0.6.49/docs/build/html/_sources/index.txt
+distribute-0.6.49/docs/build/html/_sources/pkg_resources.txt
+distribute-0.6.49/docs/build/html/_sources/python3.txt
+distribute-0.6.49/docs/build/html/_sources/roadmap.txt
+distribute-0.6.49/docs/build/html/_sources/setuptools.txt
+distribute-0.6.49/docs/build/html/_sources/using.txt
+distribute-0.6.49/docs/build/html/_static/
+distribute-0.6.49/docs/build/html/_static/basic.css
+distribute-0.6.49/docs/build/html/_static/nature.css
+distribute-0.6.49/docs/build/html/_static/pygments.css
+distribute-0.6.49/docs/conf.py
+distribute-0.6.49/docs/easy_install.txt
+distribute-0.6.49/docs/index.txt
+distribute-0.6.49/docs/Makefile
+distribute-0.6.49/docs/pkg_resources.txt
+distribute-0.6.49/docs/python3.txt
+distribute-0.6.49/docs/roadmap.txt
+distribute-0.6.49/docs/setuptools.txt
+distribute-0.6.49/docs/using.txt
+distribute-0.6.49/docs/_templates/
+distribute-0.6.49/docs/_templates/indexsidebar.html
+distribute-0.6.49/docs/_theme/
+distribute-0.6.49/docs/_theme/nature/
+distribute-0.6.49/docs/_theme/nature/static/
+distribute-0.6.49/docs/_theme/nature/static/nature.css_t
+distribute-0.6.49/docs/_theme/nature/static/pygments.css
+distribute-0.6.49/docs/_theme/nature/theme.conf
+distribute-0.6.49/easy_install.py
+distribute-0.6.49/launcher.c
+distribute-0.6.49/MANIFEST.in
+distribute-0.6.49/PKG-INFO
+distribute-0.6.49/pkg_resources.py
+distribute-0.6.49/README.txt
+distribute-0.6.49/release.py
+distribute-0.6.49/setup.cfg
+distribute-0.6.49/setup.py
+distribute-0.6.49/setuptools/
+distribute-0.6.49/setuptools/archive_util.py
+distribute-0.6.49/setuptools/cli-32.exe
+distribute-0.6.49/setuptools/cli-64.exe
+distribute-0.6.49/setuptools/cli-arm-32.exe
+distribute-0.6.49/setuptools/cli.exe
+distribute-0.6.49/setuptools/command/
+distribute-0.6.49/setuptools/command/alias.py
+distribute-0.6.49/setuptools/command/bdist_egg.py
+distribute-0.6.49/setuptools/command/bdist_rpm.py
+distribute-0.6.49/setuptools/command/bdist_wininst.py
+distribute-0.6.49/setuptools/command/build_ext.py
+distribute-0.6.49/setuptools/command/build_py.py
+distribute-0.6.49/setuptools/command/develop.py
+distribute-0.6.49/setuptools/command/easy_install.py
+distribute-0.6.49/setuptools/command/egg_info.py
+distribute-0.6.49/setuptools/command/install.py
+distribute-0.6.49/setuptools/command/install_egg_info.py
+distribute-0.6.49/setuptools/command/install_lib.py
+distribute-0.6.49/setuptools/command/install_scripts.py
+distribute-0.6.49/setuptools/command/launcher manifest.xml
+distribute-0.6.49/setuptools/command/register.py
+distribute-0.6.49/setuptools/command/rotate.py
+distribute-0.6.49/setuptools/command/saveopts.py
+distribute-0.6.49/setuptools/command/sdist.py
+distribute-0.6.49/setuptools/command/setopt.py
+distribute-0.6.49/setuptools/command/test.py
+distribute-0.6.49/setuptools/command/upload.py
+distribute-0.6.49/setuptools/command/upload_docs.py
+distribute-0.6.49/setuptools/command/__init__.py
+distribute-0.6.49/setuptools/depends.py
+distribute-0.6.49/setuptools/dist.py
+distribute-0.6.49/setuptools/extension.py
+distribute-0.6.49/setuptools/gui-32.exe
+distribute-0.6.49/setuptools/gui-64.exe
+distribute-0.6.49/setuptools/gui-arm-32.exe
+distribute-0.6.49/setuptools/gui.exe
+distribute-0.6.49/setuptools/package_index.py
+distribute-0.6.49/setuptools/py24compat.py
+distribute-0.6.49/setuptools/sandbox.py
+distribute-0.6.49/setuptools/script template (dev).py
+distribute-0.6.49/setuptools/script template.py
+distribute-0.6.49/setuptools/site-patch.py
+distribute-0.6.49/setuptools/tests/
+distribute-0.6.49/setuptools/tests/doctest.py
+distribute-0.6.49/setuptools/tests/indexes/
+distribute-0.6.49/setuptools/tests/indexes/test_links_priority/
+distribute-0.6.49/setuptools/tests/indexes/test_links_priority/external.html
+distribute-0.6.49/setuptools/tests/indexes/test_links_priority/simple/
+distribute-0.6.49/setuptools/tests/indexes/test_links_priority/simple/foobar/
+distribute-0.6.49/setuptools/tests/indexes/test_links_priority/simple/foobar/index.html
+distribute-0.6.49/setuptools/tests/py26compat.py
+distribute-0.6.49/setuptools/tests/server.py
+distribute-0.6.49/setuptools/tests/test_bdist_egg.py
+distribute-0.6.49/setuptools/tests/test_build_ext.py
+distribute-0.6.49/setuptools/tests/test_develop.py
+distribute-0.6.49/setuptools/tests/test_dist_info.py
+distribute-0.6.49/setuptools/tests/test_easy_install.py
+distribute-0.6.49/setuptools/tests/test_markerlib.py
+distribute-0.6.49/setuptools/tests/test_packageindex.py
+distribute-0.6.49/setuptools/tests/test_resources.py
+distribute-0.6.49/setuptools/tests/test_sandbox.py
+distribute-0.6.49/setuptools/tests/test_sdist.py
+distribute-0.6.49/setuptools/tests/test_test.py
+distribute-0.6.49/setuptools/tests/test_upload_docs.py
+distribute-0.6.49/setuptools/tests/win_script_wrapper.txt
+distribute-0.6.49/setuptools/tests/__init__.py
+distribute-0.6.49/setuptools/__init__.py
+distribute-0.6.49/tests/
+distribute-0.6.49/tests/api_tests.txt
+distribute-0.6.49/tests/install_test.py
+distribute-0.6.49/tests/manual_test.py
+distribute-0.6.49/tests/shlib_test/
+distribute-0.6.49/tests/shlib_test/hello.c
+distribute-0.6.49/tests/shlib_test/hello.pyx
+distribute-0.6.49/tests/shlib_test/hellolib.c
+distribute-0.6.49/tests/shlib_test/setup.py
+distribute-0.6.49/tests/shlib_test/test_hello.py
+distribute-0.6.49/tests/test_distribute_setup.py
+distribute-0.6.49/tests/test_pkg_resources.py
+distribute-0.6.49/_markerlib/
+distribute-0.6.49/_markerlib/markers.py
+distribute-0.6.49/_markerlib/__init__.py
+[root@localhost 下载]# cd distribute-0.6.49/
+[root@localhost distribute-0.6.49]# python setup.py install
+Before install bootstrap.
+Scanning installed packages
+Setuptools installation detected at /usr/local/lib/python2.7/site-packages
+Non-egg installation
+Moving elements out of the way...
+Patching...
+Renaming /usr/local/lib/python2.7/site-packages/setuptools-18.6-py2.7.egg-info to /usr/local/lib/python2.7/site-packages/setuptools-18.6-py2.7.egg-info.OLD.1446992227.51
+Renaming /usr/local/lib/python2.7/site-packages/setuptools to /usr/local/lib/python2.7/site-packages/setuptools.OLD.1446992227.57
+Could not find the /usr/local/lib/python2.7/site-packages/pkg_resources.py element of the Setuptools distribution
+Could not find the /usr/local/lib/python2.7/site-packages/site.py element of the Setuptools distribution
+Patching complete.
+Relaunching...
+Before install bootstrap.
+Scanning installed packages
+Setuptools installation detected at /usr/local/lib/python2.7/site-packages
+Non-egg installation
+Moving elements out of the way...
+Already patched.
+/usr/local/lib/python2.7/site-packages/setuptools-18.6-py2.7.egg-info already patched.
+running install
+running bdist_egg
+running egg_info
+writing distribute.egg-info/PKG-INFO
+writing top-level names to distribute.egg-info/top_level.txt
+writing dependency_links to distribute.egg-info/dependency_links.txt
+writing entry points to distribute.egg-info/entry_points.txt
+reading manifest file 'distribute.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'distribute.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+copying pkg_resources.py -> build/lib
+copying easy_install.py -> build/lib
+creating build/lib/setuptools
+copying setuptools/archive_util.py -> build/lib/setuptools
+copying setuptools/depends.py -> build/lib/setuptools
+copying setuptools/dist.py -> build/lib/setuptools
+copying setuptools/extension.py -> build/lib/setuptools
+copying setuptools/package_index.py -> build/lib/setuptools
+copying setuptools/py24compat.py -> build/lib/setuptools
+copying setuptools/sandbox.py -> build/lib/setuptools
+copying setuptools/script template (dev).py -> build/lib/setuptools
+copying setuptools/script template.py -> build/lib/setuptools
+copying setuptools/site-patch.py -> build/lib/setuptools
+copying setuptools/__init__.py -> build/lib/setuptools
+creating build/lib/_markerlib
+copying _markerlib/markers.py -> build/lib/_markerlib
+copying _markerlib/__init__.py -> build/lib/_markerlib
+creating build/lib/setuptools/command
+copying setuptools/command/alias.py -> build/lib/setuptools/command
+copying setuptools/command/bdist_egg.py -> build/lib/setuptools/command
+copying setuptools/command/bdist_rpm.py -> build/lib/setuptools/command
+copying setuptools/command/bdist_wininst.py -> build/lib/setuptools/command
+copying setuptools/command/build_ext.py -> build/lib/setuptools/command
+copying setuptools/command/build_py.py -> build/lib/setuptools/command
+copying setuptools/command/develop.py -> build/lib/setuptools/command
+copying setuptools/command/easy_install.py -> build/lib/setuptools/command
+copying setuptools/command/egg_info.py -> build/lib/setuptools/command
+copying setuptools/command/install.py -> build/lib/setuptools/command
+copying setuptools/command/install_egg_info.py -> build/lib/setuptools/command
+copying setuptools/command/install_lib.py -> build/lib/setuptools/command
+copying setuptools/command/install_scripts.py -> build/lib/setuptools/command
+copying setuptools/command/register.py -> build/lib/setuptools/command
+copying setuptools/command/rotate.py -> build/lib/setuptools/command
+copying setuptools/command/saveopts.py -> build/lib/setuptools/command
+copying setuptools/command/sdist.py -> build/lib/setuptools/command
+copying setuptools/command/setopt.py -> build/lib/setuptools/command
+copying setuptools/command/test.py -> build/lib/setuptools/command
+copying setuptools/command/upload.py -> build/lib/setuptools/command
+copying setuptools/command/upload_docs.py -> build/lib/setuptools/command
+copying setuptools/command/__init__.py -> build/lib/setuptools/command
+creating build/lib/setuptools/tests
+copying setuptools/tests/doctest.py -> build/lib/setuptools/tests
+copying setuptools/tests/py26compat.py -> build/lib/setuptools/tests
+copying setuptools/tests/server.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_bdist_egg.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_build_ext.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_develop.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_dist_info.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_easy_install.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_markerlib.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_packageindex.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_resources.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_sandbox.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_sdist.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_test.py -> build/lib/setuptools/tests
+copying setuptools/tests/test_upload_docs.py -> build/lib/setuptools/tests
+copying setuptools/tests/__init__.py -> build/lib/setuptools/tests
+copying setuptools/cli-32.exe -> build/lib/setuptools
+copying setuptools/cli-64.exe -> build/lib/setuptools
+copying setuptools/cli-arm-32.exe -> build/lib/setuptools
+copying setuptools/cli.exe -> build/lib/setuptools
+copying setuptools/gui-32.exe -> build/lib/setuptools
+copying setuptools/gui-64.exe -> build/lib/setuptools
+copying setuptools/gui-arm-32.exe -> build/lib/setuptools
+copying setuptools/gui.exe -> build/lib/setuptools
+copying setuptools/command/launcher manifest.xml -> build/lib/setuptools/command
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+copying build/lib/pkg_resources.py -> build/bdist.linux-x86_64/egg
+copying build/lib/easy_install.py -> build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/archive_util.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/depends.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/dist.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/extension.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/package_index.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/py24compat.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/sandbox.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/script template (dev).py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/script template.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/site-patch.py -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/__init__.py -> build/bdist.linux-x86_64/egg/setuptools
+creating build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/alias.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/bdist_egg.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/bdist_rpm.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/bdist_wininst.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/build_ext.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/build_py.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/develop.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/easy_install.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/egg_info.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/install.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/install_egg_info.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/install_lib.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/install_scripts.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/register.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/rotate.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/saveopts.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/sdist.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/setopt.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/test.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/upload.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/upload_docs.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/__init__.py -> build/bdist.linux-x86_64/egg/setuptools/command
+copying build/lib/setuptools/command/launcher manifest.xml -> build/bdist.linux-x86_64/egg/setuptools/command
+creating build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/doctest.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/py26compat.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/server.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_bdist_egg.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_build_ext.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_develop.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_dist_info.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_easy_install.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_markerlib.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_packageindex.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_resources.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_sandbox.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_sdist.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_test.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/test_upload_docs.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/tests/__init__.py -> build/bdist.linux-x86_64/egg/setuptools/tests
+copying build/lib/setuptools/cli-32.exe -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/cli-64.exe -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/cli-arm-32.exe -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/cli.exe -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/gui-32.exe -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/gui-64.exe -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/gui-arm-32.exe -> build/bdist.linux-x86_64/egg/setuptools
+copying build/lib/setuptools/gui.exe -> build/bdist.linux-x86_64/egg/setuptools
+creating build/bdist.linux-x86_64/egg/_markerlib
+copying build/lib/_markerlib/markers.py -> build/bdist.linux-x86_64/egg/_markerlib
+copying build/lib/_markerlib/__init__.py -> build/bdist.linux-x86_64/egg/_markerlib
+byte-compiling build/bdist.linux-x86_64/egg/pkg_resources.py to pkg_resources.pyc
+byte-compiling build/bdist.linux-x86_64/egg/easy_install.py to easy_install.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/archive_util.py to archive_util.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/depends.py to depends.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/dist.py to dist.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/extension.py to extension.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/package_index.py to package_index.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/py24compat.py to py24compat.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/sandbox.py to sandbox.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/script template (dev).py to script template (dev).pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/script template.py to script template.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/site-patch.py to site-patch.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/alias.py to alias.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/bdist_egg.py to bdist_egg.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/bdist_rpm.py to bdist_rpm.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/bdist_wininst.py to bdist_wininst.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/build_ext.py to build_ext.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/build_py.py to build_py.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/develop.py to develop.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/easy_install.py to easy_install.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/egg_info.py to egg_info.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/install.py to install.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/install_egg_info.py to install_egg_info.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/install_lib.py to install_lib.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/install_scripts.py to install_scripts.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/register.py to register.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/rotate.py to rotate.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/saveopts.py to saveopts.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/sdist.py to sdist.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/setopt.py to setopt.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/test.py to test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/upload.py to upload.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/upload_docs.py to upload_docs.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/command/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/doctest.py to doctest.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/py26compat.py to py26compat.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/server.py to server.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_bdist_egg.py to test_bdist_egg.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_build_ext.py to test_build_ext.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_develop.py to test_develop.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_dist_info.py to test_dist_info.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_easy_install.py to test_easy_install.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_markerlib.py to test_markerlib.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_packageindex.py to test_packageindex.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_resources.py to test_resources.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_sandbox.py to test_sandbox.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_sdist.py to test_sdist.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_test.py to test_test.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/test_upload_docs.py to test_upload_docs.pyc
+byte-compiling build/bdist.linux-x86_64/egg/setuptools/tests/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/_markerlib/__init__.py to __init__.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying distribute.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying distribute.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying distribute.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying distribute.egg-info/entry_points.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying distribute.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying distribute.egg-info/zip-safe -> build/bdist.linux-x86_64/egg/EGG-INFO
+creating 'dist/distribute-0.6.49-py2.7.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing distribute-0.6.49-py2.7.egg
+creating /usr/local/lib/python2.7/site-packages/distribute-0.6.49-py2.7.egg
+Extracting distribute-0.6.49-py2.7.egg to /usr/local/lib/python2.7/site-packages
+Adding distribute 0.6.49 to easy-install.pth file
+Installing easy_install script to /usr/local/bin
+Installing easy_install-2.7 script to /usr/local/bin
+
+Installed /usr/local/lib/python2.7/site-packages/distribute-0.6.49-py2.7.egg
+Processing dependencies for distribute==0.6.49
+Finished processing dependencies for distribute==0.6.49
+After install bootstrap.
+Creating /usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg-info
+Creating /usr/local/lib/python2.7/site-packages/setuptools.pth
+[root@localhost distribute-0.6.49]# easy_install pip
+Searching for pip
+Best match: pip 7.1.2
+Adding pip 7.1.2 to easy-install.pth file
+
+Using /usr/local/lib/python2.7/site-packages
+Processing dependencies for pip
+Finished processing dependencies for pip
+[root@localhost distribute-0.6.49]# pip install -y virtualenv
+
+Usage:   
+  pip install [options] <requirement specifier> [package-index-options] ...
+  pip install [options] -r <requirements file> [package-index-options] ...
+  pip install [options] [-e] <vcs project url> ...
+  pip install [options] [-e] <local project path> ...
+  pip install [options] <archive url/path> ...
+
+no such option: -y
+[root@localhost distribute-0.6.49]# pip install virtualenv
+Collecting virtualenv
+  Downloading virtualenv-13.1.2-py2.py3-none-any.whl (1.7MB)
+    100% |████████████████████████████████| 1.7MB 193kB/s 
+Installing collected packages: virtualenv
+Successfully installed virtualenv-13.1.2
+[root@localhost distribute-0.6.49]# pip install virtualenvwrapper
+Collecting virtualenvwrapper
+  Downloading virtualenvwrapper-4.7.1-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): virtualenv in /usr/local/lib/python2.7/site-packages (from virtualenvwrapper)
+Collecting virtualenv-clone (from virtualenvwrapper)
+  Downloading virtualenv-clone-0.2.6.tar.gz
+Collecting stevedore (from virtualenvwrapper)
+  Downloading stevedore-1.9.0-py2.py3-none-any.whl
+Collecting pbr>=1.6 (from stevedore->virtualenvwrapper)
+  Retrying (Retry(total=4, connect=None, read=None, redirect=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.python.org', port=443): Read timed out. (read timeout=15)",)': /packages/py2.py3/p/pbr/pbr-1.8.1-py2.py3-none-any.whl
+  Downloading pbr-1.8.1-py2.py3-none-any.whl (89kB)
+    100% |████████████████████████████████| 90kB 552kB/s 
+Collecting argparse (from stevedore->virtualenvwrapper)
+  Downloading argparse-1.4.0-py2.py3-none-any.whl
+Collecting six>=1.9.0 (from stevedore->virtualenvwrapper)
+  Using cached six-1.10.0-py2.py3-none-any.whl
+Installing collected packages: virtualenv-clone, pbr, argparse, six, stevedore, virtualenvwrapper
+  Running setup.py install for virtualenv-clone
+Successfully installed argparse-1.4.0 pbr-1.8.1 six-1.10.0 stevedore-1.9.0 virtualenv-clone-0.2.6 virtualenvwrapper-4.7.1
+[root@localhost distribute-0.6.49]# pip install "ipython[notebook]"
+Collecting ipython[notebook]
+  Using cached ipython-4.0.0-py2-none-any.whl
+Collecting decorator (from ipython[notebook])
+  Using cached decorator-4.0.4-py2.py3-none-any.whl
+Collecting simplegeneric>0.8 (from ipython[notebook])
+  Using cached simplegeneric-0.8.1.zip
+Collecting pexpect (from ipython[notebook])
+  Using cached pexpect-4.0.1.tar.gz
+Collecting traitlets (from ipython[notebook])
+  Using cached traitlets-4.0.0-py2.py3-none-any.whl
+Collecting pickleshare (from ipython[notebook])
+  Using cached pickleshare-0.5.tar.gz
+Collecting notebook (from ipython[notebook])
+  Using cached notebook-4.0.6-py2.py3-none-any.whl
+Collecting ptyprocess>=0.5 (from pexpect->ipython[notebook])
+  Using cached ptyprocess-0.5.tar.gz
+Collecting ipython-genutils (from traitlets->ipython[notebook])
+  Using cached ipython_genutils-0.1.0-py2.py3-none-any.whl
+Collecting path.py (from pickleshare->ipython[notebook])
+  Using cached path.py-8.1.2-py2.py3-none-any.whl
+Collecting tornado>=4 (from notebook->ipython[notebook])
+  Using cached tornado-4.3.tar.gz
+Collecting jupyter-client (from notebook->ipython[notebook])
+  Using cached jupyter_client-4.1.1-py2.py3-none-any.whl
+Collecting nbformat (from notebook->ipython[notebook])
+  Using cached nbformat-4.0.1-py2.py3-none-any.whl
+Collecting jupyter-core (from notebook->ipython[notebook])
+  Using cached jupyter_core-4.0.6-py2.py3-none-any.whl
+Collecting jinja2 (from notebook->ipython[notebook])
+  Using cached Jinja2-2.8-py2.py3-none-any.whl
+Collecting ipykernel (from notebook->ipython[notebook])
+  Using cached ipykernel-4.1.1-py2.py3-none-any.whl
+Collecting terminado>=0.3.3 (from notebook->ipython[notebook])
+  Using cached terminado-0.5.tar.gz
+Collecting nbconvert (from notebook->ipython[notebook])
+  Using cached nbconvert-4.1.0-py2.py3-none-any.whl
+Collecting backports.ssl-match-hostname (from tornado>=4->notebook->ipython[notebook])
+  Downloading backports.ssl_match_hostname-3.4.0.2.tar.gz
+Collecting singledispatch (from tornado>=4->notebook->ipython[notebook])
+  Using cached singledispatch-3.4.0.3-py2.py3-none-any.whl
+Collecting certifi (from tornado>=4->notebook->ipython[notebook])
+  Using cached certifi-2015.9.6.2-py2.py3-none-any.whl
+Collecting backports-abc>=0.4 (from tornado>=4->notebook->ipython[notebook])
+  Using cached backports_abc-0.4-py2.py3-none-any.whl
+Collecting pyzmq>=13 (from jupyter-client->notebook->ipython[notebook])
+  Using cached pyzmq-15.0.0.tar.gz
+Collecting jsonschema!=2.5.0,>=2.0 (from nbformat->notebook->ipython[notebook])
+  Using cached jsonschema-2.5.1-py2.py3-none-any.whl
+Collecting MarkupSafe (from jinja2->notebook->ipython[notebook])
+  Downloading MarkupSafe-0.23.tar.gz
+Collecting pygments (from nbconvert->notebook->ipython[notebook])
+  Using cached Pygments-2.0.2-py2-none-any.whl
+Collecting mistune!=0.6 (from nbconvert->notebook->ipython[notebook])
+  Using cached mistune-0.7.1-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): six in /usr/local/lib/python2.7/site-packages (from singledispatch->tornado>=4->notebook->ipython[notebook])
+Collecting functools32 (from jsonschema!=2.5.0,>=2.0->nbformat->notebook->ipython[notebook])
+  Using cached functools32-3.2.3-2.tar.gz
+Installing collected packages: decorator, simplegeneric, ptyprocess, pexpect, ipython-genutils, traitlets, path.py, pickleshare, backports.ssl-match-hostname, singledispatch, certifi, backports-abc, tornado, jupyter-core, pyzmq, jupyter-client, functools32, jsonschema, nbformat, MarkupSafe, jinja2, ipykernel, terminado, pygments, mistune, nbconvert, notebook, ipython
+  Running setup.py install for simplegeneric
+  Running setup.py install for ptyprocess
+  Running setup.py install for pexpect
+  Running setup.py install for pickleshare
+  Running setup.py install for backports.ssl-match-hostname
+  Running setup.py install for tornado
+  Running setup.py install for pyzmq
+  Running setup.py install for functools32
+  Running setup.py install for MarkupSafe
+  Running setup.py install for terminado
+Successfully installed MarkupSafe-0.23 backports-abc-0.4 backports.ssl-match-hostname-3.4.0.2 certifi-2015.9.6.2 decorator-4.0.4 functools32-3.2.3-2 ipykernel-4.1.1 ipython-4.0.0 ipython-genutils-0.1.0 jinja2-2.8 jsonschema-2.5.1 jupyter-client-4.1.1 jupyter-core-4.0.6 mistune-0.7.1 nbconvert-4.1.0 nbformat-4.0.1 notebook-4.0.6 path.py-8.1.2 pexpect-4.0.1 pickleshare-0.5 ptyprocess-0.5 pygments-2.0.2 pyzmq-15.0.0 simplegeneric-0.8.1 singledispatch-3.4.0.3 terminado-0.5 tornado-4.3 traitlets-4.0.0
+
